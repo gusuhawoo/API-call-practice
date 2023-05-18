@@ -6,6 +6,23 @@ REST API의 자원 표현을 위한 URL 설계 규칙
 API는 developer console에서 사용 신청 후 사용에 필요한 키를 발급받아 사용할 수 있도록 설계되어 있음.
 (Google developer console, Facebook developer console, Samsung developer console...)
 
+REST API의 구성요소
+1. HTTP Method
+  GET - 데이터 조회
+  POST - 새로운 데이터 추가
+  PUT - 데이터 전체 수정
+  PATCh - 데이터 일부 수정
+  DELETE - 정보 삭제
+2. URL - 데이터 접근
+3. Representation - 자원의 표현
+
+HTTP Method(GET,POST,PUT,DELETE)를 이용해 리소스에 대해 CRUD(CREATE, READ, UPDATE, DELETE)명령을 적용
+CRUD   | HTTP Method | 요청의 뜻
+CREATE | POST        | 올려줘
+READ   | GET         | 불러와줘
+UPDATE | PUT         | 바꿔줘
+DELETE | DELETE      | 지워줘
+
 REST API의 장점 : 요청이 쉽다
 REST API의 문제점 :
   Over-Fetching : 필요한 정보보다 더 많은 데이터를 전달 받는 것(불필요한 리소스 낭비가 발생됨, 필요한 정보만 골라내는 추가 작업이 발생됨)
