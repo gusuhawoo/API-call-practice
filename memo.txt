@@ -1,0 +1,7 @@
+REST API의 자원 표현을 위한 URL 설계 규칙
+1. 소문자만 사용
+2. Hyphen(-)은 사용하지 않고 Underscore밑줄(_)을 사용
+3. 확장자를 표시하지 않음
+
+API는 developer console에서 사용 신청 후 사용에 필요한 키를 발급받아 사용할 수 있도록 설계되어 있음.
+(Google developer console, Facebook developer console, Samsung developer console...)

@@ -1,0 +1,29 @@
+# https://developers.google.com/books/docs/v1/using
+
+# Extensions → Add 'REST Client' → Add .http file → get url → Click 'Send Request'
+
+
+# [Search Title]
+# GET https://www.googleapis.com/books/v1/volumes?q=intitle=
+
+GET https://www.googleapis.com/books/v1/volumes?q=intitle=CleanCode
+# →　https://www.googleapis.com/books/v1/volumes/s8dDDwAAQBAJ
+
+###
+
+GET https://www.googleapis.com/books/v1/volumes?q=intitle=모던자바스크립트
+# → https://www.googleapis.com/books/v1/volumes/cT5ODwAAQBAJ
+
+###
+
+# [Search Author]
+# GET https://www.googleapis.com/books/v1/volumes?q=inauthor=
+
+GET https://www.googleapis.com/books/v1/volumes?q=inauthor=martinfowler
+# → https://www.googleapis.com/books/v1/volumes/2H1_DwAAQBAJ
+
+###
+
+# [Search Identifier]
+GET https://www.googleapis.com/books/v1/volumes?q=isbn=013475770X
+# → https://www.googleapis.com/books/v1/volumes/2H1_DwAAQBAJ
