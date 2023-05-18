@@ -5,3 +5,43 @@ REST API의 자원 표현을 위한 URL 설계 규칙
 
 API는 developer console에서 사용 신청 후 사용에 필요한 키를 발급받아 사용할 수 있도록 설계되어 있음.
 (Google developer console, Facebook developer console, Samsung developer console...)
+
+REST API의 장점 : 요청이 쉽다
+REST API의 문제점 :
+  Over-Fetching : 필요한 정보보다 더 많은 데이터를 전달 받는 것(불필요한 리소스 낭비가 발생됨, 필요한 정보만 골라내는 추가 작업이 발생됨)
+  Under-Fetching : 필요한 데이터를 만들기 위해 여러 번의 호출이 필요
+  (경우에 따라 복수의 API호출이 동시에 필요한 경우가 발생될 수 있음 → 사진의 리스트와 카테고리의 리스트, id 1번과3번 등이 동시에 필요할 경우)
+  API마다 다른 URL이 존재함
+    http://localhost:3000/photos/list
+    http://localhost:3000/photos/get_category
+    http://localhost:3000/photos/id
+    http://localhost:3000/photos/category
+    ...
+    경우에 따라 수십, 수백 개의 URL이 필요할 수 있음
+    Make API : 일일이 이름을 지어야 함
+    Use API : API URL을 계속해서 확인해야 함
+
+GraphQL
+GraphQL의 장점 : 사용자가 직접 어떤 데이터가 필요한지 명시할 수 있도록 함 (데이터 관리 측면에서 효율적임)
+  REST API의 Over-Fetching문제를 사용자가 필요한 데이터를 호출하게 함으로써 해결
+  REST API의 Under-Fetching문제를 복수의 여러 API를 동시에 명시하고 단 한번의 호출로 받아오게 함으로써 해결
+  API마다 서로다른 URL이 필요하던 문제는 요청은 한개의 URL로 보내지만 Query를 다르게 응답하도록 하여 해결
+GraphQL의 단점 : 요청에 필요한 항목을 모두 명시해야해서 요청이 복잡하다
+
+Graph Query Language
+  Query Language : 데이터베이스 또는 데이터 관리 시스템에 접근하기 위한 언어
+  Graph : Server API로 정보를 주고받는 것에 특화된 Query Language
+
+GraphQL이 만들어진 이유 : ios, android 등 다양한 기기에서 필요한 정보의 형태가 조금씩 달랐고
+  기존의 REST API로는 이 것들을 일일이 구현하는 것이 힘들었기에
+  정보를 요청하는 쪽에서 원하는 형태로 정보를 가져오고 수정할 수 있는 Query Language가 만들어지게 됨.
+
+GraphQL + Apollo : Apollo는 GraphQL을 좀 더 쉽게 사용할 수 있도록 Apollo client, Apollo server를 제공함
+
+GraphQL의 Operation type
+  query – a read‐only fetch.(데이터 조회)
+  mutation – a write followed by a fetch.(데이터 수정)
+  subscription – a long‐lived request that fetches data in response to source events.
+  (주로 실시간 애플리케이션 구현을 위해 사용)
+
+GraphQL은 SW개발 중 서버와 클라이언트 통신을 위한 내장 API의 형태로만 거의 사용되고 있다.
