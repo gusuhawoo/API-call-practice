@@ -44,4 +44,4 @@ GraphQL의 Operation type
   subscription – a long‐lived request that fetches data in response to source events.
   (주로 실시간 애플리케이션 구현을 위해 사용)
 
-GraphQL은 SW개발 중 서버와 클라이언트 통신을 위한 내장 API의 형태로만 거의 사용되고 있다.
+GraphQL은 SW개발 중 서버와 클라이언트 통신을 위한 내장 API의 형태로만 거의 사용되고 있음.
